@@ -1,0 +1,104 @@
+[package]
+name = "rsbash"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+name = "rsbash"
+crate-type = ["cdylib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[workspace]
+
+members=[
+ "builtins_rust/jobs",
+ "builtins_rust/fg_bg",
+ "builtins_rust/fc",
+ "builtins_rust/getopts",
+ "builtins_rust/read",
+ "builtins_rust/cd",
+ "builtins_rust/pushd",
+ "builtins_rust/rlet",
+ "builtins_rust/mapfile",
+ "builtins_rust/help",
+ "builtins_rust/exit",
+ "builtins_rust/history",
+ "builtins_rust/kill",
+ "builtins_rust/builtin",
+ "builtins_rust/colon",
+ "builtins_rust/echo",
+ "builtins_rust/complete",
+ "builtins_rust/shopt",
+ "builtins_rust/alias",
+ "builtins_rust/caller",
+ "builtins_rust/eval",
+ "builtins_rust/exec",
+ "builtins_rust/common",
+ "builtins_rust/cmd",
+ "builtins_rust/enable",
+ "builtins_rust/declare",
+ "builtins_rust/command",
+ "builtins_rust/hash",
+ "builtins_rust/break_1",
+ "builtins_rust/type",
+ "builtins_rust/ulimit",
+ "builtins_rust/set",
+ "builtins_rust/bind",
+ "builtins_rust/echo",
+ "builtins_rust/hash",
+ "builtins_rust/umask",
+ "builtins_rust/wait",
+ "builtins_rust/suspend",
+ "builtins_rust/kill",
+ "builtins_rust/history",
+ "builtins_rust/mapfile",
+ "builtins_rust/printf",
+ "builtins_rust/rlet",
+ "builtins_rust/rreturn",
+ "builtins_rust/shift",
+ "builtins_rust/test",
+ "builtins_rust/times",
+ "builtins_rust/trap",
+ "builtins_rust/setattr",
+ "builtins_rust/source",
+ "builtins_rust/exec_cmd",
+]
+
+[dependencies]
+ libc = "*"
+ rread = {path = "./builtins_rust/read"}
+ rhistory = {path = "./builtins_rust/history"}
+ rkill = {path = "./builtins_rust/kill"}
+ rlet = {path = "./builtins_rust/rlet"}
+ rsource = {path = "./builtins_rust/source"}
+ rmapfile = {path = "./builtins_rust/mapfile"}
+ rprintf = {path = "./builtins_rust/printf"}
+ rreturn = {path = "./builtins_rust/rreturn"}
+ rshift = {path = "./builtins_rust/shift"}
+ rtimes = {path = "./builtins_rust/times"}
+ rsuspend = {path = "./builtins_rust/suspend"}
+ rtest = {path = "./builtins_rust/test"}
+ rtrap = {path = "./builtins_rust/trap"}
+ rsetattr = {path = "./builtins_rust/setattr"}
+ rcolon = {path = "./builtins_rust/colon"}
+ rbuiltin = {path = "./builtins_rust/builtin"}
+ ralias= {path = "./builtins_rust/alias"}
+ rexit = {path = "./builtins_rust/exit"}
+ rhelp = {path = "./builtins_rust/help"}
+ rcaller = {path = "./builtins_rust/caller"}
+ reval = {path = "./builtins_rust/eval"}
+ rexec = {path = "./builtins_rust/exec"}
+ rcommon = {path = "./builtins_rust/common"}
+ rcmd = {path = "builtins_rust/cmd"}
+ renable = {path = "builtins_rust/enable"}
+ rbreak = {path = "builtins_rust/break_1"} 
+ rulimit = {path = "builtins_rust/ulimit"} 
+ rtype = {path = "builtins_rust/type"} 
+ rset = {path = "builtins_rust/set"} 
+ rbind = {path = "./builtins_rust/bind"}
+ recho = {path = "./builtins_rust/echo"}
+ rhash = {path = "./builtins_rust/hash"}
+ rumask = {path = "./builtins_rust/umask"}
+ rwait = {path = "./builtins_rust/wait"}
+ rdeclare = {path = "./builtins_rust/declare"}
+ rexec_cmd = {path = "./builtins_rust/exec_cmd"}

@@ -1,0 +1,13 @@
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source."https://github.com/shadowsocks/crypto"]
+git = "https://github.com/shadowsocks/crypto"
+branch = "master"
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"
+
+[dependencies]
+clap = "4"

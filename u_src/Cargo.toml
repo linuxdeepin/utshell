@@ -1,0 +1,15 @@
+[package]
+name = "r_main"
+version = "0.1.0"
+edition = "2021"
+authors = ["wangm"]
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libc = "*"
+
+[lib]
+name = "r_main"
+crate-type = ["rlib", "staticlib"]

@@ -1,0 +1,57 @@
+[package]
+authors = ["zhanghuanhuan"]
+name = "rexec_cmd"
+version = "0.0.1"
+edition = "2018"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ralias = {path="../alias"}
+rbind = {path="../bind"}
+rbreak= {path="../break_1"}
+rbuiltin = {path="../builtin"}
+rcaller = {path="../caller"}
+rcd = {path="../cd"}
+rcmd = {path="../cmd"}
+rcolon = {path="../colon"}
+command = {path="../command"}
+rcommon = {path="../common"}
+rcomplete = {path="../complete"}
+rdeclare = {path="../declare"}
+recho = {path="../echo"}
+renable = {path="../enable"}
+reval = {path="../eval"}
+rexec = {path="../exec"}
+rexit = {path="../exit"}
+rfc = {path="../fc"}
+rfg_bg = {path="../fg_bg"} 
+rgetopts = {path="../getopts"}
+rhash = {path="../hash"}
+rhelp = {path="../help"}
+rhistory = {path="../history"}
+rjobs = {path="../jobs"}
+rkill = {path="../kill"}
+rmapfile = {path="../mapfile"}
+rprintf = {path="../printf"}
+rpushd = {path="../pushd"}
+rread = {path="../read"}
+rlet = {path="../rlet"}
+rreturn = {path="../rreturn"}
+rset = {path="../set"}
+rsetattr = {path="../setattr"}
+rshift = {path="../shift"}
+rshopt = {path="../shopt"}
+rsource = {path="../source"}
+rsuspend = {path="../suspend"}
+rtest = {path="../test"}
+rtimes = {path="../times"}
+rtrap = {path="../trap"}
+rtype = {path="../type"}
+rulimit = {path="../ulimit"}
+rumask = {path="../umask"}
+rwait = {path="../wait"}
+libc = "*"
+[lib]
+crate-type = ["staticlib","rlib"]
+name = "rexec_cmd"
+

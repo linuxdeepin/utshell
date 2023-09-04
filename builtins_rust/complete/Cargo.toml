@@ -1,0 +1,16 @@
+[package]
+authors = ["huzhengming"]
+name = "rcomplete"
+version = "0.0.1"
+edition = "2018"
+
+[dependencies]
+lazy_static = "*"
+libc = "*"
+nix = "*"
+rcommon = {path="../common"}
+rhelp = {path ="../help"}
+
+[lib]
+crate-type = ["staticlib","rlib"]
+name = "rcomplete"

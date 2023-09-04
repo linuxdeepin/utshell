@@ -1,0 +1,116 @@
+This file is umask.def, from which is created umask.c.
+It implements the builtin "umask" in Bash.
+
+Copyright (C) 1987-2020 Free Software Foundation, Inc.
+
+This file is part of GNU Bash, the Bourne Again SHell.
+
+Bash is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Bash is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Bash.  If not, see <http://www.gnu.org/licenses/>.
+
+$PRODUCES umask.c
+
+$BUILTIN umask
+$FUNCTION umask_builtin
+$SHORT_DOC umask [-p] [-S] [mode]
+Display or set file mode mask.
+
+Sets the user file-creation mask to MODE.  If MODE is omitted, prints
+the current value of the mask.
+
+If MODE begins with a digit, it is interpreted as an octal number;
+otherwise it is a symbolic mode string like that accepted by chmod(1).
+
+Options:
+  -p	if MODE is omitted, output in a form that may be reused as input
+  -S	makes the output symbolic; otherwise an octal number is output
+
+Exit Status:
+Returns success unless MODE is invalid or an invalid option is given.
+$END
+
+#include <config.h>
+
+#include "../bashtypes.h"
+#include "filecntl.h"
+#if ! defined(_MINIX) && defined (HAVE_SYS_FILE_H)
+#  include <sys/file.h>
+#endif
+
+#if defined (HAVE_UNISTD_H)
+#include <unistd.h>
+#endif
+
+#include <stdio.h>
+#include <chartypes.h>
+
+#include "../bashintl.h"
+
+#include "../shell.h"
+#include "posixstat.h"
+#include "common.h"
+#include "bashgetopt.h"
+
+/* **************************************************************** */
+/*                                                                  */
+/*                     UMASK Builtin and Helpers                    */
+/*                                                                  */
+/* **************************************************************** */
+
+static void print_symbolic_umask PARAMS((mode_t));
+static int symbolic_umask PARAMS((WORD_LIST *));
+
+extern int  r_umask_builtin(WORD_LIST *);
+
+/* Set or display the mask used by the system when creating files.  Flag
+   of -S means display the umask in a symbolic mode. */
+int
+umask_builtin (list)
+     WORD_LIST *list;
+{
+	r_umask_builtin(list);
+
+}
+
+
+
+
+
+/* Print the umask in a symbolic form.  In the output, a letter is
+   printed if the corresponding bit is clear in the umask. */
+static void
+#if defined (__STDC__)
+print_symbolic_umask (mode_t um)
+#else
+print_symbolic_umask (um)
+     mode_t um;
+#endif
+{
+}
+
+int
+parse_symbolic_mode (mode, initial_bits)
+     char *mode;
+     int initial_bits;
+{
+}
+
+/* Set the umask from a symbolic mode string similar to that accepted
+   by chmod.  If the -S argument is given, then print the umask in a
+   symbolic form. */
+static int
+symbolic_umask (list)
+     WORD_LIST *list;
+{
+}
+

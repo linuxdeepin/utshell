@@ -1,0 +1,18 @@
+[package]
+authors = ["huzhengming"]
+name = "rdeclare"
+version = "0.0.1"
+edition = "2018"
+
+
+[dependencies]
+lazy_static = "*"
+libc = "*"
+nix = "*"
+rcommon = {path = "../common"}
+rhelp = {path ="../help"}
+rsetattr = {path = "../setattr"}
+
+[lib]
+crate-type = ["staticlib","rlib"]
+name = "rdeclare"

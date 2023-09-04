@@ -1,0 +1,21 @@
+[package]
+authors = ["zhanghuanhuan"]
+name = "rtype"
+edition = "2018"
+version = "0.0.1"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+[dependencies]
+libc = "*"
+nix = "*"
+rcommon = {path ="../common"}
+rhelp = {path ="../help"}
+fluent = "*"
+fluent-bundle = "*"
+fluent-resmgr = "*"
+
+[lib]
+crate-type = ["staticlib","rlib"]
+name = "rtype"
